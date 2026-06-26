@@ -1,5 +1,136 @@
-<html><body style='text-align:center;background:#ffe4ec;padding-top:100px'>
-<h1>cut The Cake 🎂</h1>
-<div style='font-size:150px;cursor:pointer' onclick="location.href='surprise.html'">🎂</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
 
-</body></html>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff9ecb,#ffd6e8,#fff0f5);
+overflow:hidden;
+}
+
+/* Floating Hearts */
+.heart{
+position:absolute;
+color:#ff2d75;
+font-size:25px;
+animation:float 8s linear infinite;
+opacity:.7;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) scale(0.5);
+}
+100%{
+transform:translateY(-120px) scale(1.3);
+}
+}
+
+.container{
+text-align:center;
+padding:40px;
+background:rgba(255,255,255,.2);
+backdrop-filter:blur(15px);
+border-radius:25px;
+box-shadow:0 10px 40px rgba(0,0,0,.2);
+}
+
+h1{
+font-size:45px;
+color:#ff0066;
+margin-bottom:30px;
+}
+
+p{
+font-size:20px;
+color:#444;
+margin-bottom:20px;
+}
+
+.cake{
+font-size:170px;
+cursor:pointer;
+transition:.5s;
+animation:bounce 2s infinite;
+}
+
+.cake:hover{
+transform:scale(1.15) rotate(5deg);
+}
+
+@keyframes bounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-15px);
+}
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>🎂 Happy Birthday My Baby ❤️</h1>
+
+<p>Make a Wish... ✨</p>
+
+<div class="cake" onclick="cutCake()">
+🎂
+</div>
+
+</div>
+
+<script>
+
+function cutCake(){
+
+document.body.style.background="black";
+
+setTimeout(()=>{
+location.href="surprise.html";
+},1500);
+
+}
+
+// Hearts
+
+for(let i=0;i<30;i++){
+
+let h=document.createElement("div");
+
+h.innerHTML="❤";
+
+h.className="heart";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.animationDuration=(4+Math.random()*5)+"s";
+
+h.style.fontSize=(15+Math.random()*25)+"px";
+
+document.body.appendChild(h);
+
+}
+
+</script>
+
+</body>
+</html>
